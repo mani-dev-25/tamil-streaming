@@ -3,7 +3,14 @@
 <head>
 <title>Tamil Cartoon Streaming</title>
 <style>
-/* ===== BASE ===== */
+
+/* =========================
+   BASE DESIGN
+========================= */
+
+*{
+box-sizing:border-box;
+}
 
 body{
 margin:0;
@@ -12,7 +19,9 @@ background:#0f0f0f;
 color:#ffffff;
 }
 
-/* ===== HEADER ===== */
+/* =========================
+   HEADER
+========================= */
 
 header{
 background:#111;
@@ -23,64 +32,75 @@ font-weight:700;
 letter-spacing:1px;
 }
 
-/* ===== GRID (2 PER ROW) ===== */
+/* =========================
+   GRID LAYOUT
+========================= */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(2, 1fr);
+grid-template-columns:repeat(2, 1fr); /* 2 per row */
 gap:22px;
 padding:25px;
 }
 
-/* ===== CARD ===== */
+/* =========================
+   CARD STYLE
+========================= */
 
 .card{
 background:#1c1c1c;
-border-radius:14px;
+border-radius:16px;
 overflow:hidden;
 display:flex;
 flex-direction:column;
-height:340px;
 transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Hover Effect */
 
 .card:hover{
-transform:translateY(-6px) scale(1.02);
-box-shadow:0 8px 20px rgba(0,0,0,0.6);
+transform:translateY(-6px);
+box-shadow:0 10px 25px rgba(0,0,0,0.7);
 }
 
-/* ===== VIDEO ===== */
+/* =========================
+   VIDEO STYLE
+========================= */
 
 .card video{
 width:100%;
-height:230px;
+aspect-ratio:16/9;
 object-fit:cover;
+display:block; /* 🔥 removes bottom gap */
 background:black;
 }
 
-/* ===== TITLE ===== */
+/* =========================
+   TITLE STYLE
+========================= */
 
 .card h3{
 margin:0;
-padding:12px;
+padding:14px;
 font-size:15px;
 text-align:center;
 color:#e5e5e5;
+background:#1c1c1c;
 }
 
-/* ===== RESPONSIVE (MOBILE) ===== */
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
 
 @media(max-width:768px){
 .grid{
-grid-template-columns:1fr;
+grid-template-columns:1fr; /* Mobile = 1 per row */
+padding:15px;
+gap:18px;
 }
-.card{
-height:300px;
-}
-.card video{
-height:200px;
+
+.card h3{
+font-size:14px;
 }
 }
 
