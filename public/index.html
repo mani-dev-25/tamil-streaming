@@ -3,11 +3,59 @@
 <head>
 <title>Tamil Cartoon Streaming</title>
 <style>
-body{margin:0;font-family:Arial;background:#0f0f0f;color:white;}
-header{background:#111;padding:20px;text-align:center;font-size:24px;}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding:20px;}
-.card{background:#1c1c1c;padding:10px;border-radius:10px;}
-video{width:100%;border-radius:6px;}
+body{
+margin:0;
+font-family:Arial;
+background:#0f0f0f;
+color:white;
+}
+
+header{
+background:#111;
+padding:20px;
+text-align:center;
+font-size:24px;
+font-weight:bold;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+padding:20px;
+}
+
+/* CARD */
+
+.card{
+background:#1c1c1c;
+border-radius:12px;
+overflow:hidden;
+transition:0.3s;
+display:flex;
+flex-direction:column;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+/* VIDEO FIX */
+
+video{
+width:100%;
+aspect-ratio:16/9;   /* 🔥 Important */
+object-fit:cover;
+}
+
+/* TITLE */
+
+.card h3{
+padding:10px;
+margin:0;
+font-size:15px;
+text-align:center;
+}
 </style>
 </head>
 <body>
