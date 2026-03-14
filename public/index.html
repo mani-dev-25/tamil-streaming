@@ -19,7 +19,7 @@ video{width:100%;border-radius:6px;}
 <script>
 
 async function loadVideos(){
-const res = await fetch("http://localhost:5000/api/videos");
+const res = await fetch("/api/videos");
 const videos = await res.json();
 
 const grid = document.getElementById("grid");
