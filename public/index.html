@@ -3,59 +3,87 @@
 <head>
 <title>Tamil Cartoon Streaming</title>
 <style>
+/* ===== BASE ===== */
+
 body{
 margin:0;
-font-family:Arial;
+font-family:Arial, Helvetica, sans-serif;
 background:#0f0f0f;
-color:white;
+color:#ffffff;
 }
+
+/* ===== HEADER ===== */
 
 header{
 background:#111;
 padding:20px;
 text-align:center;
-font-size:24px;
-font-weight:bold;
+font-size:26px;
+font-weight:700;
+letter-spacing:1px;
 }
+
+/* ===== GRID (2 PER ROW) ===== */
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-padding:20px;
+grid-template-columns:repeat(2, 1fr);
+gap:22px;
+padding:25px;
 }
 
-/* CARD */
+/* ===== CARD ===== */
 
 .card{
 background:#1c1c1c;
-border-radius:12px;
+border-radius:14px;
 overflow:hidden;
-transition:0.3s;
 display:flex;
 flex-direction:column;
+height:340px;
+transition:transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+/* Hover Effect */
 
 .card:hover{
-transform:scale(1.03);
+transform:translateY(-6px) scale(1.02);
+box-shadow:0 8px 20px rgba(0,0,0,0.6);
 }
 
-/* VIDEO FIX */
+/* ===== VIDEO ===== */
 
-video{
+.card video{
 width:100%;
-aspect-ratio:16/9;   /* 🔥 Important */
+height:230px;
 object-fit:cover;
+background:black;
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 
 .card h3{
-padding:10px;
 margin:0;
+padding:12px;
 font-size:15px;
 text-align:center;
+color:#e5e5e5;
 }
+
+/* ===== RESPONSIVE (MOBILE) ===== */
+
+@media(max-width:768px){
+.grid{
+grid-template-columns:1fr;
+}
+.card{
+height:300px;
+}
+.card video{
+height:200px;
+}
+}
+
 </style>
 </head>
 <body>
