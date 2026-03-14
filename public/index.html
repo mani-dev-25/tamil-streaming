@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tamil Cartoon Streaming</title>
+<style>
+body{margin:0;font-family:Arial;background:#0f0f0f;color:white;}
+header{background:#111;padding:20px;text-align:center;font-size:24px;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding:20px;}
+.card{background:#1c1c1c;padding:10px;border-radius:10px;}
+video{width:100%;border-radius:6px;}
+</style>
+</head>
+<body>
+
+<header>Tamil Cartoon Streaming</header>
+
+<div class="grid" id="grid"></div>
+
+<script>
+
+async function loadVideos(){
+const res = await fetch("http://localhost:5000/api/videos");
+const videos = await res.json();
+
+const grid = document.getElementById("grid");
+
+videos.forEach(video=>{
+const card = document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<video controls>
+<source src="${video.url}" type="video/mp4">
+</video>
+<h3>${video.title}</h3>
+`;
+
+grid.appendChild(card);
+});
+}
+
+loadVideos();
+
+</script>
+
+</body>
+</html>
