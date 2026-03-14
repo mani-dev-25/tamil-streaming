@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tamil Cartoon Streaming</title>
 <style>
 
@@ -125,7 +126,7 @@ const card = document.createElement("div");
 card.className="card";
 
 card.innerHTML=`
-<video controls>
+<video controls style="width:100%; height:auto;">
 <source src="${video.url}" type="video/mp4">
 </video>
 <h3>${video.title}</h3>
